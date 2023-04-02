@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertFormat = exports.toDecimal = exports.reverseDecimal = exports.reverseHex = exports.formHex = exports.toHex = void 0;
+exports.convertFormat = exports.toDecimal = exports.reverseDecimal = exports.reverseHex = exports.formHex = exports.toHex = exports.isValidFormat = exports.ID_CARD_FORMMATS = void 0;
+exports.ID_CARD_FORMMATS = ['decimal', 'decimal-reverse', 'hex', 'hex-reverse'];
+const isValidFormat = (type) => exports.ID_CARD_FORMMATS.includes(type);
+exports.isValidFormat = isValidFormat;
 const pad = (id) => {
     const s = `${id}`;
     return s.length % 2 === 0 ? s : `0${s}`;

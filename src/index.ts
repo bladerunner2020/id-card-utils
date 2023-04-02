@@ -1,4 +1,8 @@
-export type IdFormatType = 'decimal' | 'decimal-reverse' | 'hex' | 'hex-reverse';
+export type IdCardFormatType = 'decimal' | 'decimal-reverse' | 'hex' | 'hex-reverse';
+
+export const ID_CARD_FORMMATS = ['decimal', 'decimal-reverse', 'hex', 'hex-reverse'];
+
+export const isValidFormat = (type: string) => ID_CARD_FORMMATS.includes(type);
 
 const pad = (id: number | string): string => {
   const s = `${id}`;
@@ -22,7 +26,7 @@ export const reverseDecimal = (id: string): string => {
   return pad(revDec);
 };
 
-export const toDecimal = (id: string, sourceType: IdFormatType): string => {
+export const toDecimal = (id: string, sourceType: IdCardFormatType): string => {
   switch (sourceType) {
     case 'decimal': return id;
     case 'hex': return pad(formHex(id));
@@ -34,7 +38,7 @@ export const toDecimal = (id: string, sourceType: IdFormatType): string => {
   }
 };
 
-export const convertFormat = (id: string, source: IdFormatType, dest: IdFormatType): string => {
+export const convertFormat = (id: string, source: IdCardFormatType, dest: IdCardFormatType): string => {
   if (source === dest) return id;
 
   const d = toDecimal(id, source);

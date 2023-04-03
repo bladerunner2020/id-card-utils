@@ -22,5 +22,6 @@ describe('reverseHex', () => {
   it('Real IDs', () => {
     expect(reverseHex('50776051F49902')).toBe('0299F451607750');
     expect(reverseHex('806E0ECA7C5604')).toBe('04567CCA0E6E80');
+    expect(reverseHex('804890523F8604')).toBe('04863F52904880');
   });
 });

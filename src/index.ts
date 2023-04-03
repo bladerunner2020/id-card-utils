@@ -23,14 +23,14 @@ export const reverseDecimal = (id: string): string => {
   const hex = toHex(id);
   const revHex = reverseHex(hex);
   const revDec = formHex(revHex);
-  return pad(revDec);
+  return revDec;
 };
 
 export const toDecimal = (id: string, sourceType: IdCardFormatType): string => {
   switch (sourceType) {
     case 'decimal': return id;
-    case 'hex': return pad(formHex(id));
-    case 'hex-reverse': return pad(formHex(reverseHex(id)));
+    case 'hex': return formHex(id);
+    case 'hex-reverse': return formHex(reverseHex(id));
     case 'decimal-reverse': return reverseDecimal(id);
 
     default:

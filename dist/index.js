@@ -24,14 +24,14 @@ const reverseDecimal = (id) => {
     const hex = (0, exports.toHex)(id);
     const revHex = (0, exports.reverseHex)(hex);
     const revDec = (0, exports.formHex)(revHex);
-    return pad(revDec);
+    return revDec;
 };
 exports.reverseDecimal = reverseDecimal;
 const toDecimal = (id, sourceType) => {
     switch (sourceType) {
         case 'decimal': return id;
-        case 'hex': return pad((0, exports.formHex)(id));
-        case 'hex-reverse': return pad((0, exports.formHex)((0, exports.reverseHex)(id)));
+        case 'hex': return (0, exports.formHex)(id);
+        case 'hex-reverse': return (0, exports.formHex)((0, exports.reverseHex)(id));
         case 'decimal-reverse': return (0, exports.reverseDecimal)(id);
         default:
             throw new Error('Invalid type');

@@ -1,4 +1,4 @@
-export declare type IdCardFormatType = 'decimal' | 'decimal-reverse' | 'hex' | 'hex-reverse';
+export type IdCardFormatType = 'decimal' | 'decimal-reverse' | 'hex' | 'hex-reverse';
 export declare const ID_CARD_FORMMATS: string[];
 export declare const isValidFormat: (type: string) => boolean;
 export declare const toHex: (s: string) => string;

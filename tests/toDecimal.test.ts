@@ -12,6 +12,7 @@ describe('toDecimal', () => {
   it('source - hex', () => {
     expect(toDecimal('50776051F49902', 'hex')).toBe('22649253712402690');
     expect(toDecimal('806E0ECA7C5604', 'hex')).toBe('36149806824707588');
+    expect(toDecimal('82367E04', 'hex')).toBe('2184609284');
   });
 
   it('source - reverse hex', () => {
@@ -19,5 +20,6 @@ describe('toDecimal', () => {
     expect(toDecimal('04567CCA0E6E80', 'hex-reverse')).toBe('36149806824707588');
     expect(toDecimal('24E07C06', 'hex-reverse')).toBe('108847140');
     expect(toDecimal('E9F22704', 'hex-reverse')).toBe('69726953');
+    expect(toDecimal('806E0ECA7C5604', 'hex-reverse')).toBe('1220993872719488');
   });
 });
